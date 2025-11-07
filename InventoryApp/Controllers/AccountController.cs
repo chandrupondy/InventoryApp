@@ -64,6 +64,48 @@ namespace InventoryApp.Controllers
             return RedirectToAction("Login", "Account");
         }
 
+        // GET: /Account/Register
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        // POST: /Account/Register
+        [HttpPost]
+        public IActionResult Register(string username, string password, string confirmPassword)
+        {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                ViewBag.ErrorMessage = "Username and Password are required.";
+                return View();
+            }
+
+            if (password != confirmPassword)
+            {
+                ViewBag.ErrorMessage = "Passwords do not match.";
+                return View();
+            }
+
+            var existingUser = _context.Users.FirstOrDefault(u => u.Username == username);
+            if (existingUser != null)
+            {
+                ViewBag.ErrorMessage = "Username already exists. Please choose another one.";
+                return View();
+            }
+
+            var user = new User
+            {
+                Username = username,
+                Password = password 
+            };
+
+            _context.Users.Add(user);
+            _context.SaveChanges();
+
+            ViewBag.SuccessMessage = "Registration successful! Please log in.";
+            return RedirectToAction("Login");
+        }
+
 
     }
 }

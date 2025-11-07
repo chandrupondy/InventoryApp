@@ -21,6 +21,11 @@
             </div>
 
             <button type="submit" class="btn btn-primary w-100 fw-semibold">Login</button>
+
+            <div class="text-center mt-3">
+                <a asp-action="Register" class="text-decoration-none">Don't have an account? Register</a>
+            </div>
+
         </form>
 
         @if (ViewBag.ErrorMessage != null)
