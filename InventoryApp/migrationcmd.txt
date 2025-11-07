@@ -1,0 +1,5 @@
+Add-Migration InitialCreate
+Update-Database
+
+INSERT INTO Users (Username, Password)
+VALUES ('admin', 'inventory');
