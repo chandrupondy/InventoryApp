@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Inventory Management System";
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-4 fw-bold mb-3 text-primary">Welcome to Inventory Management System</h1>
+        <p class="lead text-muted mb-4">
+            Manage your products efficiently — Add, Update, and Track Inventory with ease.
+        </p>
+
+        <a class="btn btn-lg btn-primary px-4 me-2" asp-controller="Account" asp-action="Login">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+        </a>
+
+        <a class="btn btn-lg btn-outline-secondary px-4" href="https://github.com">
+            <i class="bi bi-github"></i> View on GitHub
+        </a>
+    </div>
+
+    <hr class="my-5" />
+
+    <div class="row text-center">
+        <div class="col-md-4">
+            <i class="bi bi-box-seam display-5 text-info mb-3"></i>
+            <h4>Inventory Tracking</h4>
+            <p>Keep track of your stock levels and item details in real-time.</p>
+        </div>
+        <div class="col-md-4">
+            <i class="bi bi-pencil-square display-5 text-success mb-3"></i>
+            <h4>Easy Updates</h4>
+            <p>Quickly edit quantities, descriptions, and pricing in one place.</p>
+        </div>
+        <div class="col-md-4">
+            <i class="bi bi-shield-lock display-5 text-warning mb-3"></i>
+            <h4>Secure Access</h4>
+            <p>Simple login system to keep your data safe and private.</p>
+        </div>
+    </div>
+
+    <footer class="mt-5 text-center text-muted small">
+        &copy; @DateTime.Now.Year InventoryApp | Built with ASP.NET Core MVC &amp; SQL Server
+    </footer>
+</div>
